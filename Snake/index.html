@@ -31,11 +31,12 @@ Edited and new functionalities added by JaimeTavares-code
   .disable-dbl-tap-zoom {
   touch-action: manipulation;
 }
-  </style>
+
+</style>
 </head>
 <body>
 <center>
-  <canvas width="400" height="400" id="game"></canvas><br></center>
+  <canvas width="400" height="400" id="game"></canvas><br>
 <script>
 var counter = 0;
 var canvas = document.getElementById('game');
@@ -190,22 +191,34 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+//show/hide controls
+//source https://stackoverflow.com/questions/56742859/how-to-hide-table-with-javascript
+function toggleTable() {
+  var x = document.getElementById("controls");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else { 
+    x.style.display = "none";
+  }
+}
+
 // start the game
 requestAnimationFrame(loop);
 </script>
-<center>
-    <table width="10%"><tr>
-    </tr></center>
+
+  <button onclick="toggleTable()">Toggle Controls</button>
+    <table id="controls"><tr>
+    </tr>
     <tr>
     <td>&nbsp;</td>
-    </center><td><center><button id="btnUp" style="width: 60px; height: 40px;">Up</button></td>
+    <td><button id="btnUp" style="width: 60px; height: 40px;">Up</button></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    </center></tr></center>
+    </tr>
     <tr>
-    <td><center><button id="btnLeft" style="width: 60px; height: 40px;">Left</button></td>
-    </center><td><center><button style="width: 60px; height: 40px;" id="btnDown">Down</button><br></td>
-    </center><td><center><button style="width: 60px; height: 40px;" id="btnRight">Right</button></td>
+    <td><button id="btnLeft" style="width: 60px; height: 40px;">Left</button></td>
+    <td><button style="width: 60px; height: 40px;" id="btnDown">Down</button><br></td>
+    <td><button style="width: 60px; height: 40px;" id="btnRight">Right</button></td>
     <td>&nbsp;</td>   
     </tr>
     <tr>
@@ -266,5 +279,5 @@ var arrow_keys_handler = function(preventScroll) {
 window.addEventListener("keydown", arrow_keys_handler, false);
 
 </script>
-</body>
+</center></body>
 </html>
