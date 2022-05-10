@@ -39,7 +39,6 @@ div#stopwatch {
 }
 ul#buttons {
   list-style: none;
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -78,7 +77,6 @@ button {
         <div class="wrapper">
           <div id="stopwatch">00:00:00:00</div>
           <ul id="buttons">
-            <li><button id="pause">Stop</button></li>
             <li><button id="reset">Reset</button></li>
           </ul>
         </div>
@@ -180,11 +178,6 @@ button {
           }
     
     
-          function timePaused() {
-            watch.style.color = "red";
-            clearInterval(timer);
-          }
-    
           function timeReset(){ 
             location.reload();
           }
@@ -193,7 +186,6 @@ button {
             const el = e.target;
     
             if(el.id === 'start') timeStart();
-            if(el.id === 'pause') timePaused();
             if(el.id === 'reset') timeReset();
           })
     
