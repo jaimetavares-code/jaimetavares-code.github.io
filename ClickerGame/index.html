@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Game</title>
+        <title>The Fishy Game</title>
          <meta name="viewport" content="width=device-width, initial-scale=1" />
          <meta https-equiv="X-UA-Compatible" content="ie=edge" />
          <link rel="stylesheet" href="style.css" />
@@ -25,8 +25,8 @@ body {
   background: #636363;
 }
 .wrapper {
-  width: 400px;
-  padding: 20px;
+  width: 40%;
+  padding: 10px;
   background: rgb(110, 110, 110);
   box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
   border: 1px solid rgb(64 64 64 / 5%);
@@ -92,14 +92,9 @@ button {
         <ul>
         <button onclick="buyNets()">Nets: <span id="netsCost"> 10</span> -> You have <span id="nets">0</span></button>
         <button onclick="buyFishermen()">Fishermen: <span id="fishermenCost"> 150</span> -> You have <span id="fishermen">0</span></button>
-    </ul></div><br>
-        <button onclick="toggle()">Show/Hide messages</button>   
+    </ul></div><br>  
         <p><span id="displayClock()"></span></p>
-          <br><br><p><h4>Sources</h4></p>
-        <p><a style="color:white;" href="https://blog.stackfindover.com/how-to-create-a-stopwatch-in-javascript">Stack Findover</a></p>
-          <p><a style="color:white;" href="w3schools.com">W3Sschools</a></p>
-          <p><a style="color:white;" href="https://www.youtube.com/channel/UCdwtk889CWDeuG9GEZmLM0w">Tanktot Games</a></p>
-          <p> The fishing game v.0.0.0.6</p>
+          <p> "The fishy game" alpha 1.0</p>
           <p><h2>NOTE:</h2><h3>The game won't save your progress if you leave or reload the page.It's intended to be speedran.</h3>
         </center>
     </body>
@@ -112,7 +107,6 @@ button {
       var nets = 0;
       var fishermenCost = 150;
       var fishermen = 0;
-      var alert = false;
     
     //functions
     //function to buy fishing nets
@@ -126,8 +120,7 @@ button {
           document.getElementById("netsCost").innerHTML = netsCost;
           document.getElementById("nets").innerHTML = nets;
         } else {
-          document.getElementById("alert").innerHTML = ("You don't have enough fish to get nets!");
-          
+          alert("You don't have enough fish to get nets!");
         }
       }
     
@@ -142,7 +135,7 @@ button {
         document.getElementById("fishermenCost").innerHTML = fishermenCost;
         document.getElementById("fishermen").innerHTML = fishermen;
       } else {
-        document.getElementById("alert").innerHTML = ("You don't have enough fish to get fishermen!");
+        alert("You don't have enough fish to get fishermen!");
       }
     }
     //function that counts clicks
@@ -208,16 +201,6 @@ button {
     //https://blog.stackfindover.com/how-to-create-a-stopwatch-in-javascript/
     //w3schools
     //Tanktot Games - Youtube tutorial
-    
-  //function to show and hide alerts when the player doesn't have enough money to buy an upgrade
-  function toggle() {
-  var x = document.getElementById("alert");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-} 
     </script>
     
 </html>
