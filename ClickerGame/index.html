@@ -45,7 +45,7 @@ ul#buttons {
 ul#buttons button {
   background: #699cfc;
   border: transparent;
-  width: 100px;
+  width: 87px;
   color: rgb(0, 68, 255);
   font-size: 18px;
   text-align: left;
@@ -73,7 +73,11 @@ button {
 }
     </style>
     <body>
+      <script>
+        alert("Welcome to my clicker game demo! There's not an objective within the code, however, you can always try to get 100 nets and fishermen, and check how long it takes you. A sort of a speedrun!");
+      </script>
       <center>
+        <div id="alert"></div>
         <div class="wrapper">
           <div id="stopwatch">00:00:00:00</div>
           <ul id="buttons">
@@ -88,12 +92,12 @@ button {
           <p>Upgrades</p>
         <br>
         <ul>
-        <button onclick="buyNets()">Nets: <span id="netsCost"> 10</span> -> You have <span id="nets">0</span></button>
+        <button onclick="buyNets()">Nets: <span id="netsCost"> 10</span> -> You have <span id="nets">0</span></button><br>
         <button onclick="buyFishermen()">Fishermen: <span id="fishermenCost"> 150</span> -> You have <span id="fishermen">0</span></button>
     </ul></div><br>  
         <p><span id="displayClock()"></span></p>
           <p> "The fishy game" alpha 1.0</p>
-          <p><h2>NOTE:</h2><h3>The game won't save your progress if you leave or reload the page.It's intended to be speedran.</h3>
+          <p><h2>NOTE:</h2><h3>The game won't save your progress if you leave or reload the page.</h3>
         </center>
     </body>
     <script>

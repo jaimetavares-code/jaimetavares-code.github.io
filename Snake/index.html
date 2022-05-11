@@ -41,6 +41,9 @@ Edited and new functionalities added by JaimeTavares-code
 var counter = 0;
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
+var easy = 0;
+var medium = 0;
+var hard = 0;
 
 
 var grid = 16;
@@ -71,15 +74,6 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-//Function to show counter
-var add = (function () {
-  return function () {return counter;}
-})();
-
-function showCounter(){
-  document.getElementById("counter").innerHTML = add();
-}
-
 // game loop
 function loop() {
   requestAnimationFrame(loop);
@@ -88,6 +82,7 @@ function loop() {
   if (++count < 4) {
     return;
   }
+
 
   count = 0;
   context.clearRect(0,0,canvas.width,canvas.height);
