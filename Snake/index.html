@@ -8,6 +8,7 @@ Edited and new functionalities added by JaimeTavares-code
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="image/x-icon" href="imgs/jt.png">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta https-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Snake Game</title>
@@ -15,7 +16,7 @@ Edited and new functionalities added by JaimeTavares-code
   html, body {
     height: 100%;
     margin: 7px;
-  }
+    }
 
   body {
     background: black;
@@ -34,20 +35,19 @@ Edited and new functionalities added by JaimeTavares-code
 
 </style>
 </head>
-<body>
-<center>
+<body><center>
   <canvas width="400" height="400" id="game"></canvas><br>
 <script>
 var counter = 0;
 var canvas = document.getElementById('game');
 var context = canvas.getContext('2d');
-var easy = 0;
-var medium = 0;
+var easy = 6;
+var medium = 4;
 var hard = 0;
 
 
 var grid = 16;
-var count = 0;
+var count;
   
 var snake = {
   x: 160,
@@ -79,8 +79,8 @@ function loop() {
   requestAnimationFrame(loop);
 
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  if (++count < 4) {
-    return;
+  if (++count < 6) {
+   return;
   }
 
 
@@ -191,7 +191,8 @@ document.addEventListener('keydown', function(e) {
 function toggleTable() {
   var x = document.getElementById("controls");
   if (x.style.display === "none") {
-    x.style.display = "block";
+    x.style.display = "table";
+    
   } else { 
     x.style.display = "none";
   }
@@ -201,7 +202,7 @@ function toggleTable() {
 requestAnimationFrame(loop);
 </script>
 
-  <button onclick="toggleTable()">Toggle Controls</button>
+  <button onclick="toggleTable()">Toggle Controls</button><br>
     <table id="controls"><tr>
     </tr>
     <tr>
@@ -223,7 +224,6 @@ requestAnimationFrame(loop);
       <td>&nbsp;</td>
     </tr>
     </table>
-
 
 
 <script>
