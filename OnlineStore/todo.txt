@@ -1,0 +1,6 @@
+This is the todo file for the online store demo website
+
+in this website, i should add some clothes or something,
+make an online store demo, without a database
+have a page to explain the website has no database, but also
+include it in the code, commented.
