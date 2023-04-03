@@ -202,19 +202,19 @@ function toggleTable() {
 requestAnimationFrame(loop);
 </script>
 
-  <button onclick="toggleTable()">Toggle Controls on Phone</button><br>
+  <button onclick="toggleTable()" style="width: 200px; height: 40px; color: white; background-color: black; border-color: white;">Toggle Controls on Phone</button><br>
     <table id="controls"><tr>
     </tr>
     <tr>
     <td>&nbsp;</td>
-    <td><button id="btnUp" style="width: 60px; height: 40px;">Up</button></td>
+    <td><button id="btnUp" style="width: 60px; height: 40px; color: white; background-color: black; border-color: white;">Up</button></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     </tr>
     <tr>
-    <td><button id="btnLeft" style="width: 60px; height: 40px;">Left</button></td>
-    <td><button style="width: 60px; height: 40px;" id="btnDown">Down</button><br></td>
-    <td><button style="width: 60px; height: 40px;" id="btnRight">Right</button></td>
+    <td><button id="btnLeft" style="width: 60px; height: 40px; color: white; background-color: black; border-color: white;">Left</button></td>
+    <td><button id="btnDown" style="width: 60px; height: 40px; color: white; background-color: black; border-color: white;">Down</button><br></td>
+    <td><button id="btnRight" style="width: 60px; height: 40px; color: white; background-color: black; border-color: white;">Right</button></td>
     <td>&nbsp;</td>   
     </tr>
     <tr>
@@ -272,7 +272,6 @@ var arrow_keys_handler = function(preventScroll) {
     }
 };
 window.addEventListener("keydown", arrow_keys_handler, false);
-
 </script>
 </center></body>
 </html>
