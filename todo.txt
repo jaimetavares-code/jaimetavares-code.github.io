@@ -1,5 +1,5 @@
-Add ss of landing pages
-Switch index.html modern 
-Remove image buttons. add link buttons
-add a header with "Home, About, Dark mode toggle" (add more if needed, before dark mode toggle. dark mode toggle must be on the right, and the other buttons on the left)
+Add ss of landing pages [DONE]
+Switch index.html modern [IN PROGRESS]
+Remove image buttons. add link buttons [IN PROGRESS]
+add a header with "Home, About, Dark mode toggle" (add more if needed, before dark mode toggle. dark mode toggle must be on the right, and the other buttons on the left) [DONE]
 

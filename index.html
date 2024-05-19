@@ -14,9 +14,9 @@
 <body class="dark-mode">
     <nav class="navbar">
         <div class="navbar-left">
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#about">About</a>
+            <a href="#" id="home-button">Home</a>
+            <a href="#" id="projects-button">Projects</a>
+            <a href="#" id="about-button">About</a>
         </div>
         <div class="navbar-right">
             <button id="dark-mode-toggle"><i class="fas fa-sun"></i></button>
@@ -61,28 +61,45 @@
             </div>
         </div>
     </div>
+    <div id="about" class="content">
+        <img src="imgs/jt.png">
+        <p> 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec varius velit, at blandit purus. Integer non augue id felis ultricies convallis. Proin auctor justo at sapien efficitur, nec bibendum mi scelerisque. Morbi luctus nec orci at aliquet. Phasellus dictum sapien nec magna placerat, non aliquam tortor efficitur. Donec ultricies enim ac dui vehicula, nec ultricies erat pulvinar. Duis posuere felis quis orci laoreet, non pellentesque libero consequat. Aliquam erat volutpat. Mauris sodales, nisi nec ullamcorper feugiat, justo ex feugiat turpis, eu lacinia lacus nisi sit amet turpis. Aenean egestas lorem eu sem cursus, et sollicitudin nulla laoreet. Fusce at nisi vel risus vehicula pulvinar. Morbi faucibus elit non libero vestibulum, non cursus enim convallis. Nullam auctor odio sit amet felis fermentum, ac cursus libero posuere.
+        </p>
+        <p>
+            In lobortis, dolor sit amet tincidunt pellentesque, mi erat ultrices lectus, in faucibus ligula odio eget magna. Quisque nec nisl tincidunt, sodales justo vel, viverra felis. Nunc aliquam orci a erat facilisis, nec tincidunt dolor aliquet. Aenean in vehicula mi. Curabitur a sollicitudin augue. Maecenas vitae purus magna. Nam elementum, nulla nec tempus eleifend, arcu ex volutpat tortor, sed malesuada turpis orci sed justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+        </p>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         $(document).ready(function(){
-            $('.carousel').slick({
-                infinite: true,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                dots: true,
-            });
+            let carouselInitialized = false;
 
-            // Update text based on the current slide
-            $('.carousel').on('afterChange', function(event, slick, currentSlide){
-                $('.carousel-text .text').hide();
-                $('.carousel-text .text').eq(currentSlide).show();
-            });
+            function initializeCarousel() {
+                if (!carouselInitialized) {
+                    $('.carousel').slick({
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        dots: true,
+                    });
 
-            // Initially show the first text
-            $('.carousel-text .text').hide();
-            $('.carousel-text .text').eq(0).show();
+                    // Update text based on the current slide
+                    $('.carousel').on('afterChange', function(event, slick, currentSlide){
+                        $('.carousel-text .text').hide();
+                        $('.carousel-text .text').eq(currentSlide).show();
+                    });
+
+                    // Initially show the first text
+                    $('.carousel-text .text').hide();
+                    $('.carousel-text .text').eq(0).show();
+
+                    carouselInitialized = true;
+                }
+            }
 
             // Dark mode toggle
             $('#dark-mode-toggle').click(function(){
@@ -102,6 +119,30 @@
             // Burger menu toggle
             $('.burger-menu').click(function(){
                 $('.navbar-left').toggleClass('active');
+            });
+
+            // Toggle visibility of home content and projects carousel with fade animation
+            $('#projects-button').click(function(){
+                $('#home, #about').fadeOut(500, function() {
+                    $('#projects').fadeIn(500, function() {
+                        initializeCarousel();
+                        $('.carousel').slick('setPosition'); // Refresh the Slick carousel
+                    });
+                });
+            });
+
+            // Home button to toggle back to home content with fade animation
+            $('#home-button').click(function(){
+                $('#projects, #about').fadeOut(500, function() {
+                    $('#home').fadeIn(500);
+                });
+            });
+
+            // About button to toggle visibility with fade animation
+            $('#about-button').click(function(){
+                $('#home, #projects').fadeOut(500, function() {
+                    $('#about').fadeIn(500);
+                });
             });
         });
     </script>

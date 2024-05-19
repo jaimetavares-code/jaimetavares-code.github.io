@@ -59,6 +59,7 @@ body:not(.dark-mode) #dark-mode-toggle {
 .carousel-container {
     width: 80%;
     margin: auto;
+    display: none;
 }
 
 .carousel {
@@ -75,6 +76,13 @@ body:not(.dark-mode) #dark-mode-toggle {
     width: 100%;
     max-width: 600px;
     height: auto;
+    display: none; /* Initially hide images */
+}
+
+.carousel-item.slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
 
 .carousel-text .text {
@@ -84,6 +92,14 @@ body:not(.dark-mode) #dark-mode-toggle {
 .carousel-text .text {
     width: 100%;
     margin: auto;
+}
+
+.content {
+    display: none; /* Initially hide content sections */
+}
+
+#home {
+    display: block; /* Show home section by default */
 }
 
 @media (max-width: 768px) {
