@@ -48,13 +48,23 @@ body:not(.dark-mode) #dark-mode-toggle {
 }
 
 .burger-menu {
-    display: none;
+    display: block;
+    position: absolute;
+    left: 10px; /* Adjust the position as needed */
+    top: 10px; /* Adjust the position as needed */
     font-size: 1.5em;
     background: none;
     border: none;
     color: white;
     cursor: pointer;
 }
+
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none; /* Hide the burger menu on larger screens */
+    }
+}
+
 
 .carousel-container {
     width: 80%;
@@ -112,10 +122,6 @@ body:not(.dark-mode) #dark-mode-toggle {
 
     .navbar-left.active {
         display: flex;
-    }
-
-    .burger-menu {
-        display: block;
     }
 
     .navbar-left a {
