@@ -64,7 +64,6 @@ body:not(.dark-mode) #dark-mode-toggle {
 
 .carousel {
     margin-bottom: 20px;
-    padding: 2%;
 }
 
 .carousel-item {
@@ -122,5 +121,20 @@ body:not(.dark-mode) #dark-mode-toggle {
     .navbar-left a {
         padding: 15px;
         border-top: 1px solid #444;
+    }
+
+    .navbar-right {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar-left.active .navbar-right {
+        order: 1; /* Ensure it appears at the bottom */
+        justify-content: center;
+    }
+
+    .navbar-left.active #dark-mode-toggle {
+        margin-top: 10px;
     }
 }
