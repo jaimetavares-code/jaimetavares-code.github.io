@@ -123,8 +123,8 @@
 
             // Toggle visibility of home content and projects carousel with fade animation
             $('#projects-button').click(function(){
-                $('#home, #about').fadeOut(500, function() {
-                    $('#projects').fadeIn(500, function() {
+                $('#home, #about').fadeOut(200, function() {
+                    $('#projects').fadeIn(200, function() {
                         initializeCarousel();
                         $('.carousel').slick('setPosition'); // Refresh the Slick carousel
                     });
@@ -133,15 +133,15 @@
 
             // Home button to toggle back to home content with fade animation
             $('#home-button').click(function(){
-                $('#projects, #about').fadeOut(500, function() {
-                    $('#home').fadeIn(500);
+                $('#projects, #about').fadeOut(200, function() {
+                    $('#home').fadeIn(200);
                 });
             });
 
             // About button to toggle visibility with fade animation
             $('#about-button').click(function(){
-                $('#home, #projects').fadeOut(500, function() {
-                    $('#about').fadeIn(500);
+                $('#home, #projects').fadeOut(200, function() {
+                    $('#about').fadeIn(200);
                 });
             });
         });
