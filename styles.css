@@ -145,3 +145,11 @@ body:not(.dark-mode) #dark-mode-toggle {
         margin-top: 10px;
     }
 }
+
+button{
+    color: white;
+    background-color: rgb(21, 238, 238);
+    border: none;
+    width: 30%;
+    height: 30%;
+}
